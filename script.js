@@ -14,24 +14,9 @@ function updateProgress() {
     }
   });
 
-  if (currentIndex === 0) {
-    prevBtn.disabled = true;
-  } else {
-    prevBtn.disabled = false;
-  }
-
-  if (currentIndex === circles.length - 1) {
-    nextBtn.disabled = true;
-  } else {
-    nextBtn.disabled = false;
-  }
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === circles.length - 1;
 }
-nextBtn.addEventListener("click",()=>{
-	if(currentIndex<circles.lenght-1){
-		currentIndex++;
-		updateProgress();
-	}
-});
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
